@@ -101,204 +101,274 @@ console.log(obj.city);
 
 /////////////////////////////
 // Lecture: Passing functions as arguments
-/*
-var years = [1990, 1965, 1937, 2005, 1998];
 
-function arrayCalc(arr, fn) {
-    var arrRes = [];
-    for (var i = 0; i < arr.length; i++) {
-        arrRes.push(fn(arr[i]));
-    }
-    return arrRes;
-}
+// var years = [1990, 1965, 1937, 2005, 1998];
 
-function calculateAge(el) {
-    return 2016 - el;
-}
+// function arrayCalc(arr, fn) {
+//     var arrRes = [];
+//     for (var i = 0; i < arr.length; i++) {
+//         arrRes.push(fn(arr[i]));
+//     }
+//     return arrRes;
+// }
 
-function isFullAge(el) {
-    return el >= 18;
-}
+// function calculateAge(el) {
+//     return 2016 - el;
+// }
 
-function maxHeartRate(el) {
-    if (el >= 18 && el <= 81) {
-        return Math.round(206.9 - (0.67 * el));
-    } else {
-        return -1;
-    }
-}
+// function isFullAge(el) {
+//     return el >= 18;
+// }
+
+// function maxHeartRate(el) {
+//     if (el >= 18 && el <= 81) {
+//         return Math.round(206.9 - (0.67 * el));
+//     } else {
+//         return -1;
+//     }
+// }
 
 
-var ages = arrayCalc(years, calculateAge);
-var fullAges = arrayCalc(ages, isFullAge);
-var rates = arrayCalc(ages, maxHeartRate);
+// var ages = arrayCalc(years, calculateAge);
+// var fullAges = arrayCalc(ages, isFullAge);
+// var rates = arrayCalc(ages, maxHeartRate);
 
-console.log(ages);
-console.log(rates);
-*/
+// console.log(ages);
+// console.log(rates);
+
 
 
 
 /////////////////////////////
 // Lecture: Functions returning functions
-/*
-function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function(name) {
-            console.log(name + ', can you please explain what UX design is?');
-        }
-    } else if (job === 'teacher') {
-        return function(name) {
-            console.log('What subject do you teach, ' + name + '?');
-        }
-    } else {
-        return function(name) {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
-}
 
-var teacherQuestion = interviewQuestion('teacher');
-var designerQuestion = interviewQuestion('designer');
+// function interviewQuestion(job) {
+//     if (job === 'designer') {
+//         return function(name) {
+//             console.log(name + ', can you please explain what UX design is?');
+//         }
+//     } else if (job === 'teacher') {
+//         return function(name) {
+//             console.log('What subject do you teach, ' + name + '?');
+//         }
+//     } else {
+//         return function(name) {
+//             console.log('Hello ' + name + ', what do you do?');
+//         }
+//     }
+// }
 
-
-teacherQuestion('John');
-designerQuestion('John');
-designerQuestion('jane');
-designerQuestion('Mark');
-designerQuestion('Mike');
-
-interviewQuestion('teacher')('Mark');
-*/
+// var teacherQuestion = interviewQuestion('teacher');
+// var designerQuestion = interviewQuestion('designer');
 
 
+// teacherQuestion('John');
+// designerQuestion('John');
+// designerQuestion('jane');
+// designerQuestion('Mark');
+// designerQuestion('Mike');
+
+// console.log("1")
+// interviewQuestion('teacher')('Mark');
+// console.log("separator - new ECMA")
+
+// function interview(job) { 
+
+//     if (job === 'teacher') {
+//         return (name) => {
+
+//             console.log("teacher " + name)
+
+//         }
+//     } else if (job === "designer") {
+//         return (name) => {
+//             console.log("designer " + name)
+//         }
+//     } else { 
+//         return (name) => { 
+//             console.log("no job registered " + name)
+//         }
+//     }
+
+
+// }
+
+// var teacherThing = interview('teacher')
+// var designerThing = interview('designer')
+// var otherThing = interview('lol')
+
+// teacherThing('john')
+// designerThing('john 2')
+// otherThing('john 3')
 
 /////////////////////////////
 // Lecture: IIFE
-/*
-function game() {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-}
-game();
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
 
 
-(function () {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-})();
+// (function () {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// })();
 
-//console.log(score);
+// console.log(score);
 
 
-(function (goodLuck) {
-    var score = Math.random() * 10;
-    console.log(score >= 5 - goodLuck);
-})(5);
-*/
+
+
+// (function (goodLuck) {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5 - goodLuck);
+// })(5);
+
+//new way
+// ((goodLuck) => {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5 + goodLuck
+//     )
+// })(5)
+
+
 
 
 
 /////////////////////////////
 // Lecture: Closures
-/*
-function retirement(retirementAge) {
-    var a = ' years left until retirement.';
-    return function(yearOfBirth) {
-        var age = 2016 - yearOfBirth;
-        console.log((retirementAge - age) + a);
-    }
-}
 
-var retirementUS = retirement(66);
-var retirementGermany = retirement(65);
-var retirementIceland = retirement(67);
+// function retirement(retirementAge) {
+//     var a = ' years left until retirement.';
+//     return function(yearOfBirth) {
+//         var age = 2016 - yearOfBirth;
+//         console.log((retirementAge - age) + a);
+//     }
+// }
 
-retirementGermany(1990);
-retirementUS(1990);
-retirementIceland(1990);
+// var retirementUS = retirement(66);
+// var retirementGermany = retirement(65);
+// var retirementIceland = retirement(67);
+
+// retirementGermany(1990);
+// retirementUS(1990);
+// retirementIceland(1990);
+
+// function mayorEdad(edad) {
+//     return (nacimiento) => { 
+
+//         var age = 2020 - nacimiento
+//         console.log(age)
+//         console.log(edad - age + " años para ser mayor") 
+
+//     }
+// }
+
+// var mayorUSA = mayorEdad(21)
+// var mayorLatin = mayorEdad(18)
+
+// // mayorEdad(21)(1998)
+// mayorUSA(1998)
+// mayorLatin(2010)
 
 //retirement(66)(1990);
 
 
-function interviewQuestion(job) {
-    return function(name) {
-        if (job === 'designer') {
-            console.log(name + ', can you please explain what UX design is?');
-        } else if (job === 'teacher') {
-            console.log('What subject do you teach, ' + name + '?');
-        } else {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
-}
+// function interviewQuestion(job) {
+//     return function(name) {
+//         if (job === 'designer') {
+//             console.log(name + ', can you please explain what UX design is?');
+//         } else if (job === 'teacher') {
+//             console.log('What subject do you teach, ' + name + '?');
+//         } else {
+//             console.log('Hello ' + name + ', what do you do?');
+//         }
+//     }
+// }
 
-interviewQuestion('teacher')('John');
-*/
+// interviewQuestion('teacher')('John');
 
+// function entrevista(job) { 
+//     return (name) => { 
+//         if (job === 'teacher') {
+//             console.log(name + job)
+//         } else if (job === 'runner') {
+//             console.log(name + job + 'run')
+//         } else { 
+//             console.log("quien sabe " + name + job)
+//         }
+//     }
+// }
+
+
+// entrevista('teacher')('john')
+// entrevista('runnter')('juan')
+// entrevista('loco')('pedro')
 
 
 /////////////////////////////
 // Lecture: Bind, call and apply
-/*
-var john = {
-    name: 'John',
-    age: 26,
-    job: 'teacher',
-    presentation: function(style, timeOfDay) {
-        if (style === 'formal') {
-            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
-        } else if (style === 'friendly') {
-            console.log('Hey! What\'s up? I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
-        }
-    }
-};
 
-var emily = {
-    name: 'Emily',
-    age: 35,
-    job: 'designer'
-};
+// var john = {
+//     name: 'John',
+//     age: 26,
+//     job: 'teacher',
+//     presentation: function(style, timeOfDay) {
+//         if (style === 'formal') {
+//             console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+//         } else if (style === 'friendly') {
+//             console.log('Hey! What\'s up? I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+//         }
+//     }
+// };
 
-john.presentation('formal', 'morning');
+// var emily = {
+//     name: 'Emily',
+//     age: 35,
+//     job: 'designer'
+// };
 
-john.presentation.call(emily, 'friendly', 'afternoon');
+// john.presentation('formal', 'morning');
 
-//john.presentation.apply(emily, ['friendly', 'afternoon']);
+// john.presentation.call(emily, 'friendly', 'afternoon');
 
-var johnFriendly = john.presentation.bind(john, 'friendly');
+// //john.presentation.apply(emily, ['friendly', 'afternoon']);
 
-johnFriendly('morning');
-johnFriendly('night');
+// var johnFriendly = john.presentation.bind(john, 'friendly');
 
-var emilyFormal = john.presentation.bind(emily, 'formal');
-emilyFormal('afternoon');
+// johnFriendly('morning');
+// johnFriendly('night');
+
+// var emilyFormal = john.presentation.bind(emily, 'formal');
+// emilyFormal('afternoon');
 
 
-// Another cool example
-var years = [1990, 1965, 1937, 2005, 1998];
+// // Another cool example
+// var years = [1990, 1965, 1937, 2005, 1998];
 
-function arrayCalc(arr, fn) {
-    var arrRes = [];
-    for (var i = 0; i < arr.length; i++) {
-        arrRes.push(fn(arr[i]));
-    }
-    return arrRes;
-}
+// function arrayCalc(arr, fn) {
+//     var arrRes = [];
+//     for (var i = 0; i < arr.length; i++) {
+//         arrRes.push(fn(arr[i]));
+//     }
+//     return arrRes;
+// }
 
-function calculateAge(el) {
-    return 2016 - el;
-}
+// function calculateAge(el) {
+//     return 2016 - el;
+// }
 
-function isFullAge(limit, el) {
-    return el >= limit;
-}
+// function isFullAge(limit, el) {
+//     return el >= limit;
+// }
 
-var ages = arrayCalc(years, calculateAge);
-var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
-console.log(ages);
-console.log(fullJapan);
-*/
+// var ages = arrayCalc(years, calculateAge);
+// var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
+// console.log(ages);
+// console.log(fullJapan);
+
 
 
 
@@ -327,6 +397,104 @@ c) correct answer (I would use a number for this)
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
+
+var pregunta1 = {
+    question: "Mejor lenguaje del mundo",
+    opciones: {
+        0: 'JavaScript',
+        1: 'Java'
+    },
+    respuestas: {
+        0: 'correcta',
+        1: 'incorrecta'
+    }
+
+}
+
+var pregunta2 = {
+    question: "Mejor perro del mundo",
+    opciones: {
+        0: 'Richard',
+        1: 'Vicky'
+    },
+    respuestas: {
+        0: 'incorrecta',
+        1: 'correcta'
+    }
+
+}
+
+var pregunta3 = {
+    question: "Mejor comida del mundo",
+    opciones: {
+        0: 'Pasta',
+        1: 'Pizza'
+    },
+    respuestas: {
+        0: 'correcta',
+        1: 'incorrecta'
+    }
+
+}
+
+var preguntas = [pregunta1, pregunta2, pregunta3]
+var marcador = 0;
+
+
+
+function game() { 
+
+
+    let numero = (Math.random() * 3) -1
+    let numeroModificado = Math.ceil(numero)
+
+    let pregunta = preguntas[numeroModificado]
+
+    console.log(pregunta.question)
+    console.log(pregunta.opciones)
+    let answer = prompt("Contesta la pregunta")
+    // console.log(answer)
+    let opcionesPregunta = pregunta.respuestas 
+    // console.log(answer)
+    return () => {
+
+        var correctAnswer = ''
+
+        if (opcionesPregunta[0] === 'correcta') {
+            correctAnswer = 0
+        } else {
+            correctAnswer = 1
+        }
+
+
+        if (answer == correctAnswer) {
+            console.log('La respuesta es correcta')
+            marcador++
+            preguntas.slice(0, pregunta)
+        } else {
+            console.log('try later')
+        }
+
+
+        console.log("Tu marcador es " + marcador)
+
+    }
+    
+}
+
+let juego = game();
+
+function revisionJuego(numero) { 
+    console.log("Se revisa el juego")
+    if (numero < 3) { 
+        console.log("Se sigue jugando")
+        juego();
+    }
+}
+
+revisionJuego(marcador)
+
+
 
 
 /*
