@@ -245,4 +245,4 @@
 // const nueva = [h, ...box]
 // Array.from(nueva).forEach(el => 
 //     el.style.color = 'purple'
-// )
+// ) 
