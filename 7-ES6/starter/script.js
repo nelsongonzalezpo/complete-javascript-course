@@ -246,3 +246,141 @@
 // Array.from(nueva).forEach(el => 
 //     el.style.color = 'purple'
 // ) 
+
+//Rest Parameters
+
+// function fullAge5() { 
+//     // console.log(arguments)
+//     var argsArray = Array.prototype.slice.call(arguments)
+//     argsArray.forEach(function (el) { 
+//         console.log((2020 - el) >= 18)
+//     })
+// }
+
+// fullAge5(1990,2010,2008)
+
+// function fullAge6(...years) {
+    
+//     years.forEach(element => {
+
+//         console.log(element >= 2000)
+        
+//     });
+
+// }
+
+
+// fullAge6(1990,2010,2008)
+
+
+// function fullAge6(limit, ...years) {
+
+//     years.forEach(element => {
+
+//         console.log(element >= limit)
+
+//     });
+
+// }
+
+
+// fullAge6(20, 22,12,32,5)
+
+//Default parameters
+
+// function SmithMember(firstName, yearOfBirth, lastName = "Smith") { 
+//     this.firstName = firstName
+//     this.yearOfBirth = yearOfBirth
+//     this.lastName = lastName
+// }
+
+// var juan = new SmithMember('Juan', 1990)
+
+//MAPS
+
+// const question = new Map();
+// question.set('Pregunta', 'MascotaFavorita')
+// question.set(1, 'Perro')
+// question.set(2, 'Gato')
+// question.set(3, 'Pez')
+// question.set(4, 'Caballo')
+// question.set('Correcto', 1)
+// question.set(true, 'correct answer')
+// question.set(false, 'try again')
+
+// question.forEach((element, val) => {
+
+//     console.log(element, val)
+    
+// });
+
+// for (let [key, val] of question.entries()) { 
+
+//     if(typeof(key) === 'number')
+
+//     console.log(key,val)
+
+// }
+
+// let correctAnswer = question.get('Correcto')
+// console.log(question.get(1))
+// console.log(question.get(2))
+// console.log(question.get(3))
+// console.log(question.get(4))
+
+// let pregunta = prompt(question.get('Pregunta'))
+
+
+// console.log(pregunta)
+// pregunta == correctAnswer ? alert(question.get(true)) : alert(question.get(false))
+
+//Clases
+
+
+// class Person{
+
+//     constructor(name, year, job) { 
+//         this.name = name
+//         this.year = year
+//         this.job = job
+//     }
+
+//     calcAge() { 
+
+//         console.log(2020 - this.year)
+//     }
+
+//     //Objects cant use it
+//     static greet() { 
+//         console.log('Hello')
+//     }
+
+// }
+
+// var juan = new Person('Juan', 2000, 'Teacher')
+// juan.calcAge()
+// Person.greet()
+
+//Subclasses and Inheritance
+
+class Person{ 
+
+    constructor(name, year, lastname) {
+        this.name = name
+        this.year = year
+        this.lastname = lastname
+    }
+
+}
+
+class Atlethe extends Person { 
+
+    constructor(name, year, lastname, medals, sport) {
+        super(name, year, lastname)
+        this.medals = medals
+        this.sport = sport
+    }
+
+}
+
+var juan = new Atlethe('Juan', 1990, 'Perez', 1, 'Atletismo')
