@@ -363,24 +363,25 @@
 
 //Subclasses and Inheritance
 
-class Person{ 
+// class Person{ 
 
-    constructor(name, year, lastname) {
-        this.name = name
-        this.year = year
-        this.lastname = lastname
-    }
+//     constructor(name, year, lastname) {
+//         this.name = name
+//         this.year = year
+//         this.lastname = lastname
+//     }
 
-}
+// }
 
-class Atlethe extends Person { 
+// class Atlethe extends Person { 
 
-    constructor(name, year, lastname, medals, sport) {
-        super(name, year, lastname)
-        this.medals = medals
-        this.sport = sport
-    }
+//     constructor(name, year, lastname, medals, sport) {
+//         super(name, year, lastname)
+//         this.medals = medals
+//         this.sport = sport
+//     }
 
-}
+// }
 
-var juan = new Atlethe('Juan', 1990, 'Perez', 1, 'Atletismo')
+// var juan = new Atlethe('Juan', 1990, 'Perez', 1, 'Atletismo')
+
