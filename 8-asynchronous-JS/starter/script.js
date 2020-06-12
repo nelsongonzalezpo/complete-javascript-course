@@ -98,42 +98,94 @@
 
 //From promises to Async Await
 
-const getId = new Promise((res, rej) => {
+// const getId = new Promise((res, rej) => {
 
-    setTimeout(() => {
-        res([1, 2, 3, 4, 5])
-        // rej('no data')        
-    }, 2000);
-})
+//     setTimeout(() => {
+//         res([1, 2, 3, 4, 5])
+//         // rej('no data')        
+//     }, 2000);
+// })
 
-const getR = recId => { 
-    return new Promise((res, rej) => { 
-        setTimeout(id => {
-            const recipe = { 'title': 'Receta', 'desc': 'Receta pasta' }
-            res(id + " " + recipe.desc)
-        }, 2000, recId);
-    })
-}
+// const getR = recId => { 
+//     return new Promise((res, rej) => { 
+//         setTimeout(id => {
+//             const recipe = { 'title': 'Receta', 'desc': 'Receta pasta' }
+//             res(id + " " + recipe.desc)
+//         }, 2000, recId);
+//     })
+// }
 
 
-const getRelated = title => { 
-    return new Promise((res, rej) => { 
-        setTimeout(tit => {
+// const getRelated = title => { 
+//     return new Promise((res, rej) => { 
+//         setTimeout(tit => {
 
-            const recipe = { 'title': 'Receta', 'desc': 'Receta pasta' }
-            res(recipe.title)            
-        }, 2000);
-    })
+//             const recipe = { 'title': 'Receta', 'desc': 'Receta pasta' }
+//             res(recipe.title)            
+//         }, 2000);
+//     })
 
-}
+// }
 
-async function getRecipeAW() { 
+// async function getRecipeAW() { 
 
-    const nueva = await getId
-    // console.log(nueva)
+//     const nueva = await getId
+//     // console.log(nueva)
 
-    return nueva
+//     return nueva
     
-}
+// }
 
-getRecipeAW().then(result => {console.log(result)})
+// getRecipeAW().then(result => {console.log(result)})
+
+//  Ajax JS Fetch
+
+// fetch('http://192.168.15.154:3010/getAllStates') 
+//     .then(result => { 
+//         // console.log(result)
+//         return result.json();
+//     })
+//     .then(data => { 
+//         console.log(data)
+
+//         data.forEach(element => {
+
+//             console.log(element.name + " " + element._id)
+            
+//         });
+
+//     })
+//     .catch(error => { 
+//         console.log(error)
+//     })
+
+
+// // Async JS
+// async function getStates() {
+
+//     try {
+
+//         let resultado = await fetch('http://192.168.15.154:3010/getAllStates')
+//         // console.log(resultado)
+//         let data = await resultado.json()
+
+//         data.forEach(element => {
+//             console.log(element._id)
+//         });
+
+
+//         console.log(data)
+        
+//     } catch (error) {
+
+//         alert(error)
+        
+//     }
+
+   
+       
+
+
+// }
+
+// getStates()
